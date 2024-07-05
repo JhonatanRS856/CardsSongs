@@ -1,0 +1,21 @@
+
+#back-overlay{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7)
+}
+
+#back-overlay .song-play{
+    display: flex;
+    margin: auto;
+    width: 220px;
+    height: 350px;
+    background-color: rgb(249, 171, 171);
+    border-radius: 12px;
+}
+
+

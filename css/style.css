@@ -1,0 +1,266 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Roboto;
+    background-color: azure;
+}
+
+.content-card{
+    display: grid;
+    width: 95%;
+    margin: auto;
+    border: 1px solid #b7b7b7;
+    box-shadow: 2px 6px 10px rgb(0,0,0,.3);
+    border-radius: 12px;
+    overflow-y: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px),1fr));
+    gap: 1rem;
+    padding: 5px 10px;
+}
+
+
+
+.content-card .card-box {
+    display: flex;
+    width: 100%;
+    height: 130px;
+    border-radius: 14px;
+    box-shadow: 2px 6px 10px rgb(0,0,0,.3);
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: transform 250ms linear;
+}
+
+.card-box .text{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;   
+    background: linear-gradient(0deg,rgba(0,0,0,.1),rgba(0,0,0,.2));
+    border-radius: 12px;
+    height: 100%;
+    color: whitesmoke;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.text h2{
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.text p{
+    color: rgb(194, 194, 194);
+}
+
+.mapper p{
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.mapper .acento{
+    color: cadetblue;
+}
+
+.text .plays{
+    display: flex;
+     width: fit-content;
+    font-size: 13px;
+    gap: 7px;
+    margin-top: 3px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card-box:hover .plays{
+    opacity: 1;
+    visibility: visible;
+}
+
+.name-song p{
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.text .ranked{
+    display: inline-flex;
+    border-radius: 10px;
+    padding: 2px 6px;
+    margin-top: 5px;
+    width: fit-content;
+    color: black;
+    font-weight: bolder;
+    font-size: 11px;
+    background: rgb(215, 243, 173);
+    box-shadow: 2px 2px 5px rgb(0,0,0,.3);
+    position: absolute;
+    bottom: 7px;
+}
+
+
+.card-box:hover{
+    transform: scale(.99);
+}
+
+.text .left-ab{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 12px 12px 0;
+    padding: 0 10px 10px 0;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 0;
+    gap: 7px;
+}
+
+.left-ab .btn,.btn-play{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    height: fit-content;
+    transition: transform 250ms ease;
+    font-size: 16px;
+}
+
+
+.left-ab .btn-play{
+    position: absolute;
+    top: 10px;
+}
+
+.btn-play a{
+    color: white;
+    text-decoration: none;
+}
+
+.left-ab .btn-play:hover{
+    transform: scale(1.18);
+}
+
+.left-ab .btn:hover{
+    transform: scale(1.18);
+}
+
+.heart-icon{
+    color: white;
+    transition: color 250ms;
+}
+
+.heart-icon.active{
+    color: rgb(189, 99, 99);
+}
+
+
+.heart-button {
+    position: relative;
+}
+
+@keyframes float-up {
+    0%{
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+}
+
+
+.floating-heart {
+    position: absolute;
+    font-size: 16px;
+    color: rgb(189, 99, 99);
+    animation: float-up 1.3s ease-out forwards;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.content-card .card-box:nth-child(1){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.2)),url("../imagenes/CallmeIt.jpg");
+}
+
+.content-card .card-box:nth-child(2){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/BreakingTheHabit.png");
+}
+
+
+.content-card .card-box:nth-child(3){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/ClosertotheEdge.jpg");
+}
+
+.content-card .card-box:nth-child(4){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/AboutMe.jpg");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-card::-webkit-scrollbar{
+    width: 12px;
+}
+
+.content-card::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+.content-card::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+  }
+  
+.content-card::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
