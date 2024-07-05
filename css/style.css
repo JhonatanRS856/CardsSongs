@@ -54,6 +54,7 @@ body {
     color: whitesmoke;
     padding: 10px 10px;
     position: relative;
+    overflow: hidden;
 }
 
 .text h2{
@@ -75,7 +76,7 @@ body {
 
 .text .plays{
     display: flex;
-     width: fit-content;
+    width: fit-content;
     font-size: 13px;
     gap: 7px;
     margin-top: 3px;
@@ -87,6 +88,17 @@ body {
 .card-box:hover .plays{
     opacity: 1;
     visibility: visible;
+}
+
+.name-song{
+    max-width: 370px;
+}
+
+.name-song .name{
+    max-width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .name-song p{
@@ -179,6 +191,8 @@ body {
     position: relative;
 }
 
+
+
 @keyframes float-up {
     0%{
         transform: translateY(0);
@@ -225,6 +239,31 @@ body {
 .content-card .card-box:nth-child(4){
     background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/AboutMe.jpg");
 }
+
+.content-card .card-box:nth-child(5){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/Royalty.jpg");
+}
+
+.content-card .card-box:nth-child(6){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/Dandelions.png");
+}
+
+.content-card .card-box:nth-child(7){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/EyesHalfClosed.jpg");
+}
+
+.content-card .card-box:nth-child(8){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/United.jpg");
+}
+
+.content-card .card-box:nth-child(9){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/AFool.jpg");
+}
+
+.content-card .card-box:nth-child(10){
+    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/EyeswithShut.png");
+}
+
 
 
 

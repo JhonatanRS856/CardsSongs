@@ -1,26 +1,3 @@
-//Acción de reproducir y pausar un audio
-let currentAudio = null;
-const containers = document.querySelectorAll('.btn-play');
-
-containers.forEach(container => {
-    container.addEventListener('click', function () {
-        const audioId = this.getAttribute('data-audio');
-        const audio = document.getElementById(audioId);
-
-        if (currentAudio && currentAudio !== audio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-        }
-
-        if (audio.paused) {
-            audio.play();
-            currentAudio = audio;
-        } else {
-            audio.pause();
-            currentAudio = null;
-        }
-    });
-});
 
 
 //Acción de dar Corazón
@@ -45,5 +22,49 @@ heartButtons.forEach(button => {
         setTimeout(() => {
             floatingHeart.remove();
         }, 1000);
+    });
+});
+
+//Acciones de reproducir musica con la interacción de los botones play/pause
+
+// Variable global para rastrear el botón actualmente activo
+let currentButton = null;
+let currentAudio = null;
+
+// Selecciona todos los botones con la clase 'toggle-button'
+const toggleButtons = document.querySelectorAll('.toggle-button');
+
+// Agrega un event listener a cada botón
+toggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const audioId = this.getAttribute('data-audio');
+        const audio = document.getElementById(audioId);
+        const toggleIcon = this.querySelector('.toggle-icon');
+
+        // Pausar el audio actual si hay uno reproduciéndose
+        if (currentAudio && currentAudio !== audio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0; // Reinicia el audio
+            if (currentButton) {
+                const currentIcon = currentButton.querySelector('.toggle-icon');
+                currentIcon.classList.remove('fa-pause');
+                currentIcon.classList.add('fa-play');
+            }
+        }
+
+        // Alterna entre play y pause
+        if (audio.paused) {
+            audio.play();
+            toggleIcon.classList.remove('fa-play');
+            toggleIcon.classList.add('fa-pause');
+            currentAudio = audio;
+            currentButton = this;
+        } else {
+            audio.pause();
+            toggleIcon.classList.remove('fa-pause');
+            toggleIcon.classList.add('fa-play');
+            currentAudio = null;
+            currentButton = null;
+        }
     });
 });
