@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
@@ -16,15 +15,15 @@ body {
     background-color: azure;
 }
 
-.content-card{
+.content-card {
     display: grid;
     width: 95%;
     margin: auto;
     border: 1px solid #b7b7b7;
-    box-shadow: 2px 6px 10px rgb(0,0,0,.3);
+    box-shadow: 2px 6px 10px rgb(0, 0, 0, .3);
     border-radius: 12px;
     overflow-y: auto;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px),1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
     gap: 1rem;
     padding: 5px 10px;
 }
@@ -36,7 +35,7 @@ body {
     width: 100%;
     height: 130px;
     border-radius: 14px;
-    box-shadow: 2px 6px 10px rgb(0,0,0,.3);
+    box-shadow: 2px 6px 10px rgb(0, 0, 0, .3);
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,11 +43,11 @@ body {
     transition: transform 250ms linear;
 }
 
-.card-box .text{
+.card-box .text {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;   
-    background: linear-gradient(0deg,rgba(0,0,0,.1),rgba(0,0,0,.2));
+    flex-grow: 1;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2));
     border-radius: 12px;
     height: 100%;
     color: whitesmoke;
@@ -57,24 +56,24 @@ body {
     overflow: hidden;
 }
 
-.text h2{
+.text h2 {
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
-.text p{
+.text p {
     color: rgb(194, 194, 194);
 }
 
-.mapper p{
+.mapper p {
     margin-top: 4px;
     font-size: 14px;
 }
 
-.mapper .acento{
+.mapper .acento {
     color: cadetblue;
 }
 
-.text .plays{
+.text .plays {
     display: flex;
     width: fit-content;
     font-size: 13px;
@@ -85,28 +84,28 @@ body {
     visibility: hidden;
 }
 
-.card-box:hover .plays{
+.card-box:hover .plays {
     opacity: 1;
     visibility: visible;
 }
 
-.name-song{
+.name-song {
     max-width: 370px;
 }
 
-.name-song .name{
-    max-width: 350px;
+.name-song .name {
+    width: 92%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.name-song p{
+.name-song p {
     font-size: 15px;
     margin-top: 4px;
 }
 
-.text .ranked{
+.text .ranked {
     display: inline-flex;
     border-radius: 10px;
     padding: 2px 6px;
@@ -116,17 +115,17 @@ body {
     font-weight: bolder;
     font-size: 11px;
     background: rgb(215, 243, 173);
-    box-shadow: 2px 2px 5px rgb(0,0,0,.3);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, .3);
     position: absolute;
     bottom: 7px;
 }
 
 
-.card-box:hover{
+.card-box:hover {
     transform: scale(.99);
 }
 
-.text .left-ab{
+.text .left-ab {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -143,7 +142,8 @@ body {
     gap: 7px;
 }
 
-.left-ab .btn,.btn-play{
+.left-ab .btn,
+.btn-play {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -158,31 +158,40 @@ body {
     font-size: 16px;
 }
 
+.left-ab a{
+    color: white;
+}
 
-.left-ab .btn-play{
+.left-ab .btn-play {
     position: absolute;
     top: 10px;
 }
 
-.btn-play a{
+.btn-play a {
     color: white;
     text-decoration: none;
 }
 
-.left-ab .btn-play:hover{
+.left-ab .btn-play:hover {
     transform: scale(1.18);
 }
 
-.left-ab .btn:hover{
+.left-ab .btn:hover {
     transform: scale(1.18);
 }
 
-.heart-icon{
+.left-ab .descarga:active{
+    color: cadetblue;
+}
+
+
+
+.heart-icon {
     color: white;
     transition: color 250ms;
 }
 
-.heart-icon.active{
+.heart-icon.active {
     color: rgb(189, 99, 99);
 }
 
@@ -194,7 +203,7 @@ body {
 
 
 @keyframes float-up {
-    0%{
+    0% {
         transform: translateY(0);
     }
 
@@ -223,48 +232,58 @@ body {
 
 
 
-.content-card .card-box:nth-child(1){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.2)),url("../imagenes/CallmeIt.jpg");
+.content-card .card-box:nth-child(1) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.2)), url("../imagenes/CallmeIt.jpg");
 }
 
-.content-card .card-box:nth-child(2){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/BreakingTheHabit.png");
-}
-
-
-.content-card .card-box:nth-child(3){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/ClosertotheEdge.jpg");
-}
-
-.content-card .card-box:nth-child(4){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/AboutMe.jpg");
-}
-
-.content-card .card-box:nth-child(5){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/Royalty.jpg");
-}
-
-.content-card .card-box:nth-child(6){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/Dandelions.png");
-}
-
-.content-card .card-box:nth-child(7){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/EyesHalfClosed.jpg");
-}
-
-.content-card .card-box:nth-child(8){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/United.jpg");
-}
-
-.content-card .card-box:nth-child(9){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/AFool.jpg");
-}
-
-.content-card .card-box:nth-child(10){
-    background-image: linear-gradient(0deg,rgba(169, 153, 153, 0.3),rgba(182, 171, 171, 0.3)),url("../imagenes/EyeswithShut.png");
+.content-card .card-box:nth-child(2) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/BreakingTheHabit.png");
 }
 
 
+.content-card .card-box:nth-child(3) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/ClosertotheEdge.jpg");
+}
+
+.content-card .card-box:nth-child(4) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/AboutMe.jpg");
+}
+
+.content-card .card-box:nth-child(5) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/Royalty.jpg");
+}
+
+.content-card .card-box:nth-child(6) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/Dandelions.png");
+}
+
+.content-card .card-box:nth-child(7) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/EyesHalfClosed.jpg");
+}
+
+.content-card .card-box:nth-child(8) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/United.jpg");
+}
+
+.content-card .card-box:nth-child(9) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/AFool.jpg");
+}
+
+.content-card .card-box:nth-child(10) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/EyeswithShut.png");
+}
+
+.content-card .card-box:nth-child(11) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/somekind.jpg");
+}
+
+.content-card .card-box:nth-child(12) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/AngelWithAShotgun.png");
+}
+
+.content-card .card-box:nth-child(13) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/I-ll-See-You-Again.jpg");
+}
 
 
 
@@ -285,21 +304,21 @@ body {
 
 
 
-.content-card::-webkit-scrollbar{
+
+.content-card::-webkit-scrollbar {
     width: 12px;
 }
 
 .content-card::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
-  }
-  
+}
+
 .content-card::-webkit-scrollbar-thumb {
     background: #999;
     border-radius: 10px;
-  }
-  
+}
+
 .content-card::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-
