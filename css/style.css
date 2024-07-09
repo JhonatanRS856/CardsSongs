@@ -285,6 +285,27 @@ body {
     background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/I-ll-See-You-Again.jpg");
 }
 
+.content-card .card-box:nth-child(14) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/selfish.jpg");
+}
+
+.content-card .card-box:nth-child(15) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/rainy.png");
+}
+
+.content-card .card-box:nth-child(16) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/WantUBack.jpg");
+}
+
+.content-card .card-box:nth-child(17) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/Unbenannt-1.jpg");
+}
+
+.content-card .card-box:nth-child(18) {
+    background-image: linear-gradient(0deg, rgba(169, 153, 153, 0.3), rgba(182, 171, 171, 0.3)), url("../imagenes/quien-lo-diria.jpg");
+}
+
+
 
 
 
