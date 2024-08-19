@@ -5,1218 +5,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songs Osu</title>
-    <link rel="stylesheet" href="../css/songsplay.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="content-card">
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Call me it</h2>
-                    </div> 
-                    <p>de t+pazolite</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Fort</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 233</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 6,9 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 13 de nov. 2016</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(226, 139, 244);">
-                    <label>AMADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio1">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
+    <header class="header">
+        <div class="container-hero">
+            <div class="logoHeader">
+                <img src="../imagenes/osuLogo.png" alt="" class="logo">
+                <span class="listaMap">Lista de Mapas</span>
             </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Breaking the Habit</h2>
-                    </div>
-                    <p>de Linkin Park</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">saggi</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 1,1 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 833,1 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 3 de jul. 2022</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(226, 139, 244);">
-                    <label>AMADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio2">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
+
+
+            <div class="botones-filter">
+                <button class="btn-filter active" id="filter-all">
+                    All
+                </button>
+                <button class="btn-filter " id="filter-amados">
+                    Amados
+                </button>
+                <button class="btn-filter" id="filter-clasificados">
+                    Clasificados
+                </button>
+                <button class="btn-filter" id="filter-abandonados">
+                    Abandonados
+                </button>
+                <button class="btn-search buscarBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </button>
             </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Closer to the Edge</h2>
+            <div class="rightHeader">
+                <div class="iconos-mini">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path
+                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="filterFavorite"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-aspect-ratio" viewBox="0 0 16 16">
+                        <path
+                            d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z" />
+                        <path
+                            d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </div>
+                <div class="par-iconos">
+                    <div class="divIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chat-left-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                        </svg>
+                        <span>0</span>
                     </div>
-                    <p>de 30 Seconds to Mars</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Mao</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 68</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 66,8 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 11 de nov. 2018</p>
+
+                    <div class="divIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                        </svg>
+                        <span>0</span>
                     </div>
                 </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
+                <div class="circle-user">
+                    <img src="../imagenes/Children.jpg" alt="">
                 </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio3">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
             </div>
+            <button class="abrir-Menu" id="abrirBtn">
+                <i class='bx bxs-chevron-down chevronIcon' id="iconMenu"></i>
+            </button>
         </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>About Me</h2> 
-                    </div>
-                    <p>de Koven x ROY KNOX</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">we vibing</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 15</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 10,6 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 4 de dic. 2020</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(0, 0, 0);">
-                    <label style="color: grey;">ABANDONADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio4">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Royalty (feat. Neoni) (Wiguez & Alltair Remix)</h2>
-                    </div>
-                    <p>de Egzod & Maestro Chives</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Mao</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 623</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 369 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 12 de mar. 2023</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio5">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Dandelions (Sped Up Ver.)</h2>
-                    </div>
-                    <p>de Ruth B.</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Roupus</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 247</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 122,4 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 14 de jul. 2023</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio6">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Eyes Half Closed</h2>
-                    </div>
-                    <p>de Crywolf</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">L3NNy</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 353</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 331,6 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 19 de sep. 2020</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio7">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>United (L.A.O.S Remix)</h2>
-                    </div>
-                    <p>de Our Stolen Theory</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Hivie</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 282</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 384,1 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 21 de dic. 2022</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio8">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <a href="../Mapas/ Our Stolen Theory - United (L.A.O.S Remix).osz" download="1657003 Our Stolen Theory - United (L.A.O.S Remix).osz"><i class="fa-solid fa-file-arrow-down"></i></a>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>A Fool Moon Night</h2>
-                    </div>
-                    <p>de The Koxx</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Le Mirai</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 400</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 332,2 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 25 de oct. 2021</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio9">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Eyes Wide Shut (with Avril Lavigne)</h2>
-                    </div>
-                    <p>de ILLENIUM</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">browiec</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 292</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 404,9 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 12 de jul. 2023</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio10">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Some Kind of Magic (Feat. MYZICA)</h2>
-                    </div>
-                    <p>de LVTHER</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">gary00737</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 1,2 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 4,7 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 23 de oct. 2018</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio11">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Angel With a Shotgun (Speed Up Ver.)</h2>
-                    </div>
-                    <p>de The Cab</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Sotarks</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 2,2 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 18,7 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 29 de oct. 2020</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio12">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>I'll See You Again (feat. Chi Chi)</h2>
-                    </div>
-                    <p>de S3RL</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Gero</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 2,8 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 5,4 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 2 de ago. 2018</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio13">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Selfish</h2>
-                    </div>
-                    <p>de NEIMY</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Asphyxia</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 8</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 1,2 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 8 de jul. 2024</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio14">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>To U ft AlunaGeorge</h2>
-                    </div>
-                    <p>de Skrillex & Diplo</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">NeilPerry</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 1,8 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 2,6 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 16 de feb. 2018</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio15">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Want U Back</h2>
-                    </div>
-                    <p>de Cher Lloyd</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Skubi</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 39</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 9,5 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 9 de may. 2024</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio16">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Monsters</h2>
-                    </div>
-                    <p>de NOA</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Shifu Touka</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 1,8 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 2,8 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 22 de ago. 2018</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(226, 139, 244);">
-                    <label>AMADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio17">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>telepatia</h2>
-                    </div>
-                    <p>de Kali Uchis</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">-Magic-</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 1,6 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 590,9 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 14 de ene. 2022</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio18">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Mountain Sound</h2>
-                    </div>
-                    <p>de Of Monsters and Men</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Hobbes2</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 152</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 142,4 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 3 de mar. 2018</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio19">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>By Your Side (feat. RAYE) (Cut Ver.)</h2>
-                    </div>
-                    <p>de Jonas Blue</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Sani_</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 64</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 23,7 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 20 de may. 2024</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio20">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Aristocrat</h2>
-                    </div>
-                    <p>de Poppy</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">NFmtsX 1969</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 28</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 10,3 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 7 de may. 2024</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio21">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>The One That Got Away (Sped Up Vers.)</h2> 
-                    </div>
-                    <p>de Katy Perry</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Alucid</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 6</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 4,6 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 25 de sep. 2022</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(0, 0, 0);">
-                    <label style="color: grey;">ABANDONADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio22">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>get him back!</h2>
-                    </div>
-                    <p>de Olivia Rodrigo</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Haruto</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 104</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 28,5 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 13 de abr. 2024</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio23">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>The Beginning (Cut Ver.)</h2>
-                    </div>
-                    <p>de ONE OK ROCK</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">ArMin</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 147</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 105,2 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 2 de abr. 2024</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio24">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Giants</h2> 
-                    </div>
-                    <p>de V O E</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">FlyZag</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 12</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 3,9 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 22 de dic. 2021</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(0, 0, 0);">
-                    <label style="color: grey;">ABANDONADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio25">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Legends Never Die</h2>
-                    </div>
-                    <p>de League Of Legends</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Kalibe</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 7,7 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 6,5 M</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 24 de oct. 2017</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio26">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Howling (feat. Asena) (Andromedik Remix)</h2>
-                    </div>
-                    <p>de Cartoon</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Asphyxia</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 533</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 624,7 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 17 de mar. 2021</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio27">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Medicine (Sound Remedy Remix)</h2> 
-                    </div>
-                    <p>de Daughter</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">iiBehe</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 9</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 2,3 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 23 de sep. 2022</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(0, 0, 0);">
-                    <label style="color: grey;">ABANDONADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio28">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>Won't You Stay</h2>
-                    </div>
-                    <p>de Indivision & Livewire ft. Tasha Baxter</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">galvenize</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 383</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 253,8 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 19 de feb. 2018</p>
-                    </div>
-                </div>
-                <div class="ranked" style="background: rgb(226, 139, 244);">
-                    <label>AMADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio29">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
-            </div>
-        </div>
-        <div class="card-box">
-            <div class="text">
-                <div class="name-song">
-                    <div class="name">
-                        <h2>summer's winter</h2>
-                    </div>
-                    <p>de zts</p>
-                </div>
-                <div class="mapper">
-                    <p>Mapeado por <span class="acento">Ratarok</span></p>
-                </div>
-                <div class="plays">
-                    <div>
-                        <p><i class="fa-regular fa-heart"></i> 103</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-play"></i> 10 mil</p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-circle-check"></i> 14 de sep. 2023</p>
-                    </div>
-                </div>
-                <div class="ranked">
-                    <label>CLASIFICADO</label>
-                </div>
-                <div class="left-ab">
-                    <button class="btn-play toggle-button" data-audio="audio30">
-                        <a href="#back-overlay"><i class="fa-solid fa-play toggle-icon"></i></a>
-                    </button>
-                    <button class="btn heart-button">
-                        <i class="fa-solid fa-heart heart-icon"></i>
-                    </button>
-                    <button class="btn descarga">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>
-                </div>
-                <div class="back-blur"></div>
+    </header>
+
+    <div id="navBar-collape">
+        <div class="collapse-body">
+            <header class="header-collapse">
+                <div class="usernameDiv c-item">
+                    <img src="../imagenes/Children.jpg" alt="">
+                    <span>JhonatanRS856</span>
+                </div>
+                <div class="iconosCelestes">
+                    <button class="c-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z" />
+                        </svg>
+                    </button>
+                    <button class="c-item buscarBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </button>
+                    <button class="c-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chat-left-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                        </svg>
+                        <span>0</span>
+                    </button>
+                    <button class="c-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                        </svg>
+                        <span>0</span>
+                    </button>
+                </div>
+            </header>
+            <div class="cuerpoNav" id="cuerpoNav">
+                <nav class="nav">
+                    <ul class="ul">
+                        <li class="dropdown__li">
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> Inicio
+                            </a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-ul">
+                                    <li class="dp-item">
+                                        novedades
+                                    </li>
+                                    <li class="dp-item">
+                                        equipo
+                                    </li>
+                                    <li class="dp-item">
+                                        registro de cambios
+                                    </li>
+                                    <li class="dp-item">
+                                        descarga
+                                    </li>
+                                    <li class="dp-item">
+                                        búsqueda
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown__li">
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> Mapas
+                            </a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-ul">
+                                    <li class="dp-item">
+                                        lista de mapas
+                                    </li>
+                                    <li class="dp-item">
+                                        artistas destacados
+                                    </li>
+                                    <li class="dp-item">
+                                        paquetes de mapas
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown__li">
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> Clasificaciones
+                            </a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-ul">
+                                    <li class="dp-item">
+                                        rendimiento
+                                    </li>
+                                    <li class="dp-item">
+                                        puntuación
+                                    </li>
+                                    <li class="dp-item">
+                                        país
+                                    </li>
+                                    <li class="dp-item">
+                                        multijugador
+                                    </li>
+                                    <li class="dp-item">
+                                        destacados
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> Comunidad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> tienda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> Ayuda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-chevron-right chevronIcon'></i> español
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 
-    <audio id="audio1" src="../songs/CallMeIt.mp3"></audio>
-    <audio id="audio2" src="../songs/BreakingTheHabit.mp3"></audio>
-    <audio id="audio3" src="../songs/CloserToTheEdge.mp3"></audio>
-    <audio id="audio4" src="../songs/AboutMe.mp3"></audio>
-    <audio id="audio5" src="../songs/Royalty.mp3"></audio>
-    <audio id="audio6" src="../songs/DandelionsSpeedUp.mp3"></audio>
-    <audio id="audio7" src="../songs/EyesHalfClosed.mp3"></audio>
-    <audio id="audio8" src="../songs/United.mp3"></audio>
-    <audio id="audio9" src="../songs/AFoolMoonNight.mp3"></audio>
-    <audio id="audio10" src="../songs/EyesWithShut.mp3"></audio>
-    <audio id="audio11" src="../songs/SomeKindOfMagic.mp3"></audio>
-    <audio id="audio12" src="../songs/AngelwithAShotgun.mp3"></audio>
-    <audio id="audio13" src="../songs/I'llSeeYouAgain(feat. Chi Chi).mp3"></audio>
-    <audio id="audio14" src="../songs/NEIMYSelfish.mp3"></audio>
-    <audio id="audio15" src="../songs/To U ft Aluna George.mp3"></audio>
-    <audio id="audio16" src="../songs/want u back.mp3"></audio>
-    <audio id="audio17" src="../songs/monsters.mp3"></audio>
-    <audio id="audio18" src="../songs/telepatia.mp3"></audio>
+    <!-- section buscar cancion -->
+    <div class="containerBuscar">
+        <div class="input-box">
+            <input type="text" placeholder="escribe para buscar" id="searchInput">
+            <i class='bx bx-search'></i>
+        </div>
+        <button class="btnConfirmar" id="btnCerrarBuscar">
+            Cerrar
+        </button>
+    </div>
 
-    <audio src="../songs/MountainSound.mp3" id="audio19"></audio>
-    <audio src="../songs/By Your Side.mp3" id="audio20"></audio>
-    <audio src="../songs/Aristocrat.mp3" id="audio21"></audio>
-    <audio src="../songs/Katy Perry -The one.mp3" id="audio22"></audio>
-    <audio src="../songs/Get Him Back.mp3" id="audio23"></audio>
-    <audio src="../songs/TheBegining.mp3" id="audio24"></audio>
-    <audio src="../songs/V O E - Giants [NCS Release].mp3" id="audio25"></audio>
-    <audio src="../songs/Legends Never Die.mp3" id="audio26"></audio>
-    <audio src="../songs/Howling.mp3" id="audio27"></audio>
-    <audio src="../songs/Medicine.mp3" id="audio28"></audio>
-    <audio src="../songs/Indivision & Livewire ft. Tasha Baxter - Won't You Stay.mp3" id="audio29"></audio>
-    <audio src="../songs/Summer Winter.mp3" id="audio30"></audio>
+    <!-- cancion activa reproductor -->
+
+    <div class="containerReproductor" id="fixedPlayer">
+        <div class="content-rp">
+            <div class="top-reproductor">
+                <div class="img-content">
+                    <img src="../imagenes/CallmeIt.jpg" alt="" id="playerImage">
+                </div>
+                <div class="info-song">
+                    <h3 class="nombre-song" id="playerSongName">Call me it</h3>
+                    <span class="at-name" id="playerArtistName">t+pazolite</span>
+                </div>
+                <div class="times">
+                    <p><span id="currentTime">00:00</span> / <span id="totalTimeSpan">03:16</span></p>
+
+
+                </div>
+                <div class="divBotons-r">
+                    <button class="btnReproductor" id="btnReproducir">
+                        <i class='bx bx-pause'></i>
+                    </button>
+                    <button class="btnReproductor" id="btnSiguiente">
+                        <i class='bx bx-skip-next'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section cards -->
+
+
+    <div class="content-card" id="contentCards">
+        <!-- Las cards seran añadidas de forma dinamica con JS -->
+    </div>
+
+
+
+
 
 
     <script src="../Java/script.js"></script>
